@@ -1,0 +1,19 @@
+version: "3"
+services:
+  web:
+    build: .
+    command: 'python3 app.py'
+    depends_on:
+      - 'mysql'
+    ports: 
+      - '5000:5000'
+    volumes:
+      - .:/codes
+    environment:
+      - FLASK_ENV=development
+  mysql:
+    build: 'mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'

@@ -1,0 +1,5 @@
+mysql-connector-python
+mysqlclient
+flask
+flask_mysqldb
+haversine
